@@ -2,3 +2,6 @@ This is just the configuration of dwm I use.
 
 Main change are keybind, adapted for azerty and my brain.
 
+# Patches
+
+- Keycode https://dwm.suckless.org/patches/keycodes/
