@@ -5,3 +5,6 @@ Main change are keybind, adapted for azerty and my brain.
 # Patches
 
 - Keycode https://dwm.suckless.org/patches/keycodes/
+- Colorbar https://dwm.suckless.org/patches/colorbar/
+- Fullgaps https://dwm.suckless.org/patches/fullgaps/
+

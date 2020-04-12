@@ -5,6 +5,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -70,9 +71,7 @@ static Key keys[] = {
         { MODKEY|ShiftMask,     36,    spawn,          {.v = termcmd } }, // Return
         { MODKEY,               56,    togglebar,      {0} },             // b
         { MODKEY,               23,    focusstack,     {.i = +1 } },      // Tab
-        { MODKEY|ShiftMask,	23,    focusstack,     {.i = -1 } },      // Tab
-        { MODKEY,               44,    focusstack,     {.i = +1 } },      // j
-        { MODKEY,               45,    focusstack,     {.i = -1 } },      // k
+        { MODKEY|ShiftMask, 	23,    focusstack,     {.i = -1 } },      // Tab
         { MODKEY,               39,    incnmaster,     {.i = +1 } },      // s
         { MODKEY,               40,    incnmaster,     {.i = -1 } },      // d
         { MODKEY,               43,    setmfact,       {.f = -0.05} },    // h
@@ -83,14 +82,17 @@ static Key keys[] = {
         { MODKEY,               28,    setlayout,      {.v = &layouts[0]} }, // t
         { MODKEY,               41,    setlayout,      {.v = &layouts[1]} }, // f
         { MODKEY,               47,    setlayout,      {.v = &layouts[2]} }, // m
-        { MODKEY,               33,    setlayout,      {0} },             // space
-        { MODKEY|ShiftMask,     65,    togglefloating, {0} },             // p
+        { MODKEY,               33,    setlayout,      {0} },             // p
+        { MODKEY|ShiftMask,     65,    togglefloating, {0} },             // space
         { MODKEY,               19,    view,           {.ui = ~0 } },     // 0
         { MODKEY|ShiftMask,     19,    tag,            {.ui = ~0 } },     // 0
         { MODKEY,               31,    focusmon,       {.i = -1 } },      // i
         { MODKEY,               32,    focusmon,       {.i = +1 } },      // o
         { MODKEY|ShiftMask,     31,    tagmon,         {.i = -1 } },      // i
         { MODKEY|ShiftMask,     32,    tagmon,         {.i = +1 } },      // o
+        { MODKEY,               21,    setgaps,        {.i = -1 } },      // -
+        { MODKEY,               61,    setgaps,        {.i = +1 } },      // =
+        { MODKEY|ShiftMask,     61,    setgaps,        {.i = 0 } },       // =
         TAGKEYS(                10,                    0)                 // 1
         TAGKEYS(                11,                    1)                 // 2
         TAGKEYS(                12,                    2)                 // 3
